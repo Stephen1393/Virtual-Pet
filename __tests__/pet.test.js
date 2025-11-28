@@ -10,4 +10,12 @@ describe('constructor', () => {
       const pet = new Pet("Stanley");
       expect(pet.name).toBe("Stanley");
     });
+
+    describe('growUp', () => {
+      it('Increments age by 1', () => {
+        const pet = new Pet("Stanley")
+        pet.growUp()
+        expect(pet.age).toEqual(1)
+      });
+    });
   });
