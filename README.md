@@ -5,7 +5,7 @@ Aim of project:
 Features of the pet will include:
 [x] Name of pet.
 [x] They can get older.
-- As they get older, they get hungrier and less fit.
+[x] As they get older, they get hungrier and less fit.
 - Can increase the fitness of the pet by walking it.
 - Feed the pet to decrease it's hunger.
 - Can talk to the pet to see if it needs feeding or walking.
