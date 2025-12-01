@@ -9,6 +9,14 @@ Pet.prototype.growUp = function () {
     this.age += 1
     this.hunger += 5
     this.fitness -= 3
-} 
+}
+
+Pet.prototype.walkFitness = function () {
+    const increase = 4
+    const maxFitness = 10
+
+    this.fitness = Math.min(this.fitness + increase, maxFitness)
+    
+}
 
 module.exports = Pet;

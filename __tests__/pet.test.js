@@ -28,4 +28,43 @@ describe('constructor', () => {
         expect(pet.fitness).toEqual(7)
       });
     });
+
+    describe('walkFitness', () => {
+      it('Increase fitness by 4 if fitness is equal to or less than 6', () => {
+        const pet = new Pet("Stanley")
+
+        pet.fitness = 6
+
+        pet.walkFitness()
+
+        expect(pet.fitness).toEqual(10)
+      });
+
+      it('It will always stay at maxFitness if greater than 6', () => {
+        const pet = new Pet("Stanley")
+
+        pet.fitness = 7
+
+        pet.walkFitness()
+
+        expect(pet.fitness).toEqual(10)
+
+        pet.fitness = 9
+
+        pet.walkFitness()
+
+        expect(pet.fitness).toEqual(10)
+      });
+
+      it("Expect maxFitness to stay at maxFitness", () => {
+        const pet = new Pet("Stanley")
+        maxFitness = 10
+
+        pet.fitness = maxFitness
+
+        pet.walkFitness()
+
+        expect(pet.fitness).toEqual(10)
+      });
+    });
   });
