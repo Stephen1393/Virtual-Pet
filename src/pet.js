@@ -26,4 +26,20 @@ Pet.prototype.feed = function () {
     this.hunger = Math.max(this.hunger - food, min)
 }
 
+Pet.prototype.checkUp = function () {
+    
+    if (this.fitness >= 3 && this.hunger >= 5) {
+        return "I'm hungry AND I need a walk!"
+    }
+    if (this.fitness < 3 && this.hunger < 5) {
+        return "I feel great!"
+    }
+    if (this.fitness >= 3) {
+        return "I need a walk!"
+    }
+    if (this.hunger >= 5) {
+        return "I'm hungry!"
+    }
+}
+
 module.exports = Pet;
