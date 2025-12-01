@@ -19,4 +19,11 @@ Pet.prototype.walkFitness = function () {
     
 }
 
+Pet.prototype.feed = function () {
+    const min = 0
+    const food = 3
+
+    this.hunger = Math.max(this.hunger - food, min)
+}
+
 module.exports = Pet;

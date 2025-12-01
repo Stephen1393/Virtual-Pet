@@ -67,4 +67,33 @@ describe('constructor', () => {
         expect(pet.fitness).toEqual(10)
       });
     });
-  });
+
+    describe('feed', () => {
+      it('expect food to decrease hunger by 3', () => {
+         const pet = new Pet("Stanley")
+         pet.hunger = 4
+
+         pet.feed()
+
+         expect(pet.hunger).toEqual(1)
+
+      });
+    });
+
+    it('If hunger is less than 3, hunger will stay at 0', () => {
+       const pet = new Pet("Stanley")
+
+       pet.hunger = 2
+
+       pet.feed()
+
+       expect(pet.hunger).toEqual(0)
+    });
+
+    it('If hunger is already 0, expect hunger to stay at 0', () => {
+       const pet = new Pet("Stanley")
+       pet.hunger = 0
+       pet.feed()
+       expect(pet.hunger).toEqual(0)
+    });
+   });
