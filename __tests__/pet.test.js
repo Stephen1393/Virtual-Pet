@@ -149,4 +149,30 @@ describe('constructor', () => {
 
         expect(pet.checkUp()).toBe("I feel great!")
       });
-    });;
+
+
+      describe('isAlive', () => {
+        it('returns false if fitness <= 0 OR hunger is >= 10 OR age is >= 30', () => {
+          const pet = new Pet("Stanley")
+
+          pet.fitness = 0
+
+          pet.hunger = 10
+
+          pet.age = 30
+
+          expect(pet.isAlive).toBe(true)
+        });
+
+        it('returns true if fitness > 0 OR hunger < 10 OR age < 30 ', () => {
+          const pet = new Pet("Stanley")
+
+          pet.fitness = 1
+          pet.hunger = 9
+          pet.age = 29
+
+          expect(pet.isAlive).toBe(false)
+        });
+      });
+
+    });

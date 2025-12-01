@@ -42,4 +42,12 @@ Pet.prototype.checkUp = function () {
     }
 }
 
+Object.defineProperty(Pet.prototype, 'isAlive', {
+    get: function () {
+        return this.fitness <= 0 && this.hunger >= 10 && this.age >= 30;
+  }
+    });
+
+
 module.exports = Pet;
+
