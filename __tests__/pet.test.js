@@ -208,6 +208,7 @@ describe('constructor', () => {
 
           expect(pet.isAlive).toBe(true)
         });
+      });
 
         describe('haveChild', () => {
           it('Adds a new pet to the children array with given name', () => {
@@ -219,4 +220,16 @@ describe('constructor', () => {
             expect(parent.children[0]).toBe(child)
           })
         });
-      });
+
+        describe('aSibling', () => {
+          it('Add sibling to the siblings array with given name', () => {
+            const brother = new Pet('Stanley')
+
+            brother.aSibling("Lexy")
+
+            expect(brother.siblings).toHaveLength(1)
+            expect(brother.siblings[0]).toBeInstanceOf(Pet)
+            expect(brother.siblings[0].name).toBe('Lexy')
+          });
+        });
+    

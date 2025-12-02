@@ -11,3 +11,5 @@ Features of the pet will include:
 [x] Can talk to the pet to see if it needs feeding or walking.
 [x] If pet get too hungry or unfit, it will die.
 [x] If pet gets to 30days old, it will die.
+[x] Pet has a pet child called Violet.
+[x] Pet sibling called Lexy.
