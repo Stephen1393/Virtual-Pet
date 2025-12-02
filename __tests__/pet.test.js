@@ -161,7 +161,7 @@ describe('constructor', () => {
 
           pet.age = 30
 
-          expect(pet.isAlive).toBe(true)
+          expect(pet.isAlive).toBe(false)
         });
 
         it('returns true if fitness > 0 OR hunger < 10 OR age < 30 ', () => {
@@ -171,7 +171,7 @@ describe('constructor', () => {
           pet.hunger = 9
           pet.age = 29
 
-          expect(pet.isAlive).toBe(false)
+          expect(pet.isAlive).toBe(true)
         });
       });
 
