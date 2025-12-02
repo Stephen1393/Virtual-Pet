@@ -35,15 +35,24 @@ describe('constructor', () => {
 
         expect(pet.fitness).toEqual(7)
       });
+
+    it('If isAlive is false, it will throw an error', () => {
+      const pet = new Pet("Stanley")
+
+      pet.hunger = 10
+
+      expect(() => pet.growUp()).toThrow("Your pet is no longer alive:(")
     });
 
-    describe('walkFitness', () => {
+  });
+
+    describe('walk', () => {
       it('Increase fitness by 4 if fitness is equal to or less than 6', () => {
         const pet = new Pet("Stanley")
 
         pet.fitness = 6
 
-        pet.walkFitness()
+        pet.walk()
 
         expect(pet.fitness).toEqual(10)
       });
@@ -53,13 +62,13 @@ describe('constructor', () => {
 
         pet.fitness = 7
 
-        pet.walkFitness()
+        pet.walk()
 
         expect(pet.fitness).toEqual(10)
 
         pet.fitness = 9
 
-        pet.walkFitness()
+        pet.walk()
 
         expect(pet.fitness).toEqual(10)
       });
@@ -70,11 +79,19 @@ describe('constructor', () => {
 
         pet.fitness = maxFitness
 
-        pet.walkFitness()
+        pet.walk()
 
         expect(pet.fitness).toEqual(10)
       });
+
+      it('If isAlive is false, it will throw an error', () => {
+      const pet = new Pet("Stanley")
+
+      pet.fitness = 0
+
+      expect(() => pet.walk()).toThrow("Your pet is no longer alive:(")
     });
+  });
 
     describe('feed', () => {
       it('expect food to decrease hunger by 3', () => {
@@ -87,7 +104,6 @@ describe('constructor', () => {
          expect(pet.hunger).toEqual(1)
 
       });
-    });
 
     it('If hunger is less than 3, hunger will stay at 0', () => {
        const pet = new Pet("Stanley")
@@ -108,6 +124,16 @@ describe('constructor', () => {
 
        expect(pet.hunger).toEqual(0)
     });
+
+    it('If isAlive is false, it will throw an error', () => {
+      const pet = new Pet("Stanley")
+
+      pet.age = 30
+
+      expect(() => pet.feed()).toThrow("Your pet is no longer alive:(")
+    });
+  });
+  
 
     describe('checkUp', () => {
       it('If fitness is greater than or equal to 3, return string', () => {
@@ -148,9 +174,18 @@ describe('constructor', () => {
         pet.hunger = 4
 
         expect(pet.checkUp()).toBe("I feel great!")
+
       });
 
+      it('If isAlive is false, it will return a string', () => {
+      const pet = new Pet("Stanley")
 
+      pet.hunger = 10
+
+      expect(pet.checkUp()).toBe("Your pet is no longer alive :(")
+    });
+  });
+  
       describe('isAlive', () => {
         it('returns false if fitness <= 0 OR hunger is >= 10 OR age is >= 30', () => {
           const pet = new Pet("Stanley")
@@ -174,5 +209,3 @@ describe('constructor', () => {
           expect(pet.isAlive).toBe(true)
         });
       });
-
-    });
