@@ -3,6 +3,7 @@ function Pet(name) {
     this.age = 0
     this.hunger = 0
     this.fitness = 10
+    this.children = []
 }
 
 Object.defineProperty(Pet.prototype, 'isAlive', {
@@ -69,6 +70,11 @@ Pet.prototype.checkUp = function () {
         return "I'm hungry!"
     }
 }
+
+    Pet.prototype.haveChild = function (babyName) {
+        this.children.push(babyName)
+
+    }
 
 
 

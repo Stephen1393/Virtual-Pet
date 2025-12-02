@@ -208,4 +208,15 @@ describe('constructor', () => {
 
           expect(pet.isAlive).toBe(true)
         });
+
+        describe('haveChild', () => {
+          it('Adds a new pet to the children array with given name', () => {
+            const parent = new Pet("Stanley")
+            const child = new Pet('Violet')
+            
+            parent.haveChild(child)
+
+            expect(parent.children[0]).toBe(child)
+          })
+        });
       });
